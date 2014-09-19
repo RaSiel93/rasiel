@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: rasiel_development
+  username: rasiel
+  password: password
+
+test:
+  <<: *default
+  database: rasiel_development
+  username: rasiel
+  password:
+
+production:
+  <<: *default
+  database: rasiel_production
+  username: rasiel
+  password: password

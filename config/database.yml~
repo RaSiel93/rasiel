@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: myday_development
+  username: rasiel
+  password: password
+
+test:
+  <<: *default
+  database: myday_development
+  username: rasiel
+  password:
+
+production:
+  <<: *default
+  database: myday_production
+  username: rasiel
+  password: password

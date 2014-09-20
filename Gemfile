@@ -11,6 +11,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'compass-rails'
+gem 'awesome_print'
 
 group :development do
   gem 'spring'

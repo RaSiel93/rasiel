@@ -1,0 +1,5 @@
+h1 Editing note
+= render 'form'
+= link_to 'Destroy', [@diary, @note], method: :delete, data: { confirm: 'Are you sure?' }
+| |
+= link_to 'Back', diary_note_path(@diary, @note)

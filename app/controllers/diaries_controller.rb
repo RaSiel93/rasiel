@@ -1,29 +1,22 @@
 class DiariesController < ApplicationController
   before_action :set_diary, only: [:show, :edit, :update, :destroy]
 
-  # GET /diaries
-  # GET /diaries.json
   def index
     @title = 'Дневник'
     @diaries = Diary.all
   end
 
-  # GET /diaries/1
-  # GET /diaries/1.json
   def show
+    @notes = @diary.notes
   end
 
-  # GET /diaries/new
   def new
     @diary = Diary.new
   end
 
-  # GET /diaries/1/edit
   def edit
   end
 
-  # POST /diaries
-  # POST /diaries.json
   def create
     @diary = Diary.new(diary_params)
 
@@ -38,8 +31,6 @@ class DiariesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /diaries/1
-  # PATCH/PUT /diaries/1.json
   def update
     respond_to do |format|
       if @diary.update(diary_params)
@@ -52,8 +43,6 @@ class DiariesController < ApplicationController
     end
   end
 
-  # DELETE /diaries/1
-  # DELETE /diaries/1.json
   def destroy
     @diary.destroy
     respond_to do |format|
@@ -63,13 +52,11 @@ class DiariesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_diary
       @diary = Diary.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def diary_params
-      params[:diary]
+      params.require(:diary).permit(:title)
     end
 end

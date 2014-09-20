@@ -1,0 +1,11 @@
+h1 Listing diaries
+table
+  thead
+    tr
+      th colspan="3"
+  tbody
+    - @diaries.each do |diary|
+      tr
+        td = link_to diary.title, diary
+br
+  = link_to 'New Diary', new_diary_path

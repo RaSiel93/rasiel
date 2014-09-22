@@ -5,11 +5,10 @@ class UserController < ApplicationController
     require 'json'
 
     if params[:code].present?
-      response = Net::HTTP.get(URI.parse("https://oauth.vk.com/access_token?client_id=4557485&client_secret=1CPiSrcHxXWYTV7iWc9e&code=#{params[:code]}&redirect_uri=#{request.base_url}/authorization'"))
-      result = JSON.parse response
-      User.create(access_token: result['access_token'])
-      redirect_to root_path
+      response = JSON.parse Net::HTTP.get(URI.parse(url_to_oauth(options))"https://oauth.vk.com/access_token?client_id=#{Settings.client_id}&client_secret=#{Settings.client_secret}&code=#{params[:code]}&redirect_uri=#{Rails.root}/#{Settings.authorization_path}"))
+      User.create(access_token: response['access_token'])
     end
+    redirect_to root_path
   end
 end
 

@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'compass-rails'
 gem 'awesome_print'
+gem "rails_config", '~> 0.3.3'
 
 group :development do
   gem 'spring'

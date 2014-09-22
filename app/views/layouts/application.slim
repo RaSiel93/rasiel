@@ -8,7 +8,7 @@ html
   body
     = render 'layouts/head'
     = render @users
-    = link_to 'Авторизация', "https://oauth.vk.com/authorize?client_id=4557485&scope=wall,photos,audio,friends,video,offline&redirect_uri=#{request.base_url}/authorize&response_type=code&v=5.24"
+    = link_to 'Авторизация', "https://oauth.vk.com/authorize?client_id=#{Settings.client_id}&scope=wall,photos,audio,friends,video,offline&redirect_uri=#{Rails.root}/#{Settings.authorization_path}&response_type=code&v=5.24"
     = render 'layouts/menu'
     = yield
 

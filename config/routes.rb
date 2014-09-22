@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :notes
   end
 
+  get 'authorization' => 'user#authorization'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

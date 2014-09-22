@@ -7,7 +7,8 @@ html
     = csrf_meta_tags
   body
     = render 'layouts/head'
-    = link_to 'Авторизация', "https://oauth.vk.com/authorize?client_id=4557485&scope=wall,photos,audio,friends,video,offline&redirect_uri=http://herokuapp.rasiel.com/callback&response_type=code&v=5.24"
+    = render @users
+    = link_to 'Авторизация', "https://oauth.vk.com/authorize?client_id=4557485&scope=wall,photos,audio,friends,video,offline&redirect_uri=#{request.base_url}/authorize&response_type=code&v=5.24"
     = render 'layouts/menu'
     = yield
 

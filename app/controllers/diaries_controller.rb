@@ -7,7 +7,7 @@ class DiariesController < ApplicationController
   end
 
   def show
-    @notes = @diary.notes
+    @notes = @diary.notes.sort_by{|s| s.created_at}
   end
 
   def new

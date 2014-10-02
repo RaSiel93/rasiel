@@ -6,8 +6,8 @@ html
     = javascript_include_tag "application"
     = csrf_meta_tags
   body
+    = render 'layouts/player'
     = render 'layouts/head'
-    = link_to 'Авторизация', "https://oauth.vk.com/authorize?client_id=#{Settings.client_id}&scope=wall,photos,audio,friends,video,offline&redirect_uri=#{authorization_url}&response_type=code&v=5.24"
     = render 'layouts/menu'
+    / = link_to 'Авторизация', "https://oauth.vk.com/authorize?client_id=#{Settings.client_id}&scope=wall,photos,audio,friends,video,offline&redirect_uri=#{authorization_url}&response_type=code&v=5.24"
     = yield
-

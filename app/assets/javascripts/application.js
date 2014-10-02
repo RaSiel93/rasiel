@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.jplayer
+//= require jplayer.playlist
 //= require_tree .

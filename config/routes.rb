@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   get 'authorization' => 'user#authorization'
+  get 'load_playlist' => 'user#load_playlist'
 
 
   # Example of regular route:

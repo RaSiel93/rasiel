@@ -131,21 +131,21 @@
   background-position: -23px center;
 }
 .jp-play {
-  background-image: url('../jplayer/play.png');
+  background-image: url('play.png');
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   .jp-play {
-    background-image: url('../jplayer/play@2x.png');
+    background-image: url('play@2x.png');
     background-size: auto auto;
   }
 }
 .jp-pause {
   display: none;
-  background-image: url('../jplayer/pause.png');
+  background-image: url('pause.png');
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   .jp-pause {
-    background-image: url('../jplayer/pause@2x.png');
+    background-image: url('pause@2x.png');
     background-size: auto auto;
   }
 }
@@ -157,20 +157,20 @@
   right: 55px;
 }
 .jp-mute {
-  background-image: url('../jplayer/mute-off.png');
+  background-image: url('mute-off.png');
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   .jp-mute {
-    background-image: url('../jplayer/mute-off@2x.png');
+    background-image: url('mute-off@2x.png');
     background-size: auto auto;
   }
 }
 .jp-unmute {
-  background-image: url('../jplayer/mute-on.png');
+  background-image: url('mute-on.png');
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   .jp-unmute {
-    background-image: url('../jplayer/mute-on@2x.png');
+    background-image: url('mute-on@2x.png');
     background-size: auto auto;
   }
 }

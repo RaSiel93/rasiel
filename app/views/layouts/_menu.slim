@@ -1,7 +1,7 @@
 div#menu
-  ul
-    li = link_to 'Главная', root_path
-    li = link_to 'Блог', '#'
-    li = link_to 'Дневник', diaries_path
-    li = link_to 'Фотоальбом', '#'
-    li = link_to 'Обо мне', '#'
+  = tab_menu do |t|
+    = t.tab 'Главная', root_path
+    = t.tab 'Блог', '#'
+    = t.tab 'Дневник', diaries_path
+    = t.tab 'Фотоальбом', '#'
+    = t.tab 'Обо мне', '#'

@@ -2,12 +2,15 @@
   height: 30px
   border-bottom: 1px solid black
   li
+    &.current
+      a
+        border-bottom: 1px solid black
     list-style: none
     displey: inline-block
     float: left
+    padding: 5px 20px
     a
       text-decoration: none
       color: black
-      padding: 5px 20px
-    &:hover
-      border-bottom: 1px solid black
+      &:hover
+        border-bottom: 1px solid black

@@ -15,6 +15,7 @@ gem 'awesome_print'
 gem 'rails_config', '~> 0.3.3'
 gem 'jplayer-rails'
 gem 'vkontakte_api', '~> 1.4'
+gem 'tab_menu'
 
 group :development do
   gem 'spring'

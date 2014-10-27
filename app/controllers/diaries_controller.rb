@@ -2,7 +2,6 @@ class DiariesController < ApplicationController
   before_action :set_diary, only: [:show, :edit, :update, :destroy]
 
   def index
-    @title = 'Дневник'
     @diaries = Diary.all
   end
 

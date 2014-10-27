@@ -20,7 +20,7 @@ gem 'tab_menu'
 group :development do
   gem 'spring'
   gem 'debugger'
-  gem 'pry'
+  gem 'pry-debugger'
 end
 
 group :production do

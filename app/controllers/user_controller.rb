@@ -1,29 +1,32 @@
 class UserController < ApplicationController
-  before_filter :set_vk_client, only: [:load_playlist, :authorization]
+  before_filter :set_vk_client, only: [:load_playlist, :authorization, :update_vk_playlist]
   layout false
 
   def authorization
-    require 'net/http'
-    require 'json'
-
-    if params[:code].present?
-      response = JSON.parse Net::HTTP.get(URI.parse("https://oauth.vk.com/access_token?client_id=#{Settings.client_id}&client_secret=#{Settings.client_secret}&code=#{params[:code]}&redirect_uri=#{authorization_url}"))
-      User.create(access_token: response['access_token'])
-    end
+    redirect_to root_path, alert: 'Ошибка авторизации' if params[:state] != session[:state]
+    @vk = VkontakteApi.authorize(code: params[:code])
     redirect_to root_path
   end
 
   def load_playlist
-    playlist = @vk.audio.get.map{|a| "{title: '#{a[:artist]} - #{a[:title]}', mp3: '#{a[:url]}'}"}.join(', ')
-    respond_to do |format|
-      format.js {render 'load_playlist', :locals => {playlist: playlist}}
-    end
+    @playlist = @user.vk_playlist.to_player
+  end
+
+  def update_vk_playlist
+    # @user.vk_playlist.empty
+    # @vk.audio.get.each do |audio|
+    #   audio = Audio.new(audio.slice(:title, :artist, :url))
+    #   audio.playlist = @user.vk_playlist
+    #   audio.save
+    # end
+    @playlist = @user.vk_playlist.to_player
   end
 
   private
 
   def set_vk_client
-    @vk = VkontakteApi::Client.new('2cf52728c34a37c64843ea464bcf36ab5d587f0d547c9c8915927d9e70d5981bbe61643c304148d935c19')
+    @user = User.find_by_vk_id(session[:vk_id])
+    @vk = VkontakteApi::Client.new(@user.access_token)
   end
 end
 

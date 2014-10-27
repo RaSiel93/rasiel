@@ -97,6 +97,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-debugger (0.2.3)
+      debugger (~> 1.3)
+      pry (>= 0.9.10, < 0.11.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -177,7 +180,7 @@ DEPENDENCIES
   jplayer-rails
   jquery-rails
   pg (~> 0.17.1)
-  pry
+  pry-debugger
   rails (= 4.1.0.beta1)
   rails_12factor
   rails_config (~> 0.3.3)

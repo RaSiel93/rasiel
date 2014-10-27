@@ -1,1 +1,7 @@
-playList.setPlaylist([<%= playlist.html_safe %>])
+playList = new jPlayerPlaylist({
+    jPlayer: "#jquery_jplayer_1",
+    cssSelectorAncestor: "#jp_container_1"
+  }, [<%= @playlist.html_safe %>], {
+    supplied: "mp3",
+    wmode: "window"
+});

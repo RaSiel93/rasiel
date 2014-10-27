@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   get 'authorization' => 'user#authorization'
   get 'load_playlist' => 'user#load_playlist'
+  get 'update_vk_playlist' => 'user#update_vk_playlist'
 
+  get 'callback' => 'sessions#callback'
+  delete 'logout' => 'sessions#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

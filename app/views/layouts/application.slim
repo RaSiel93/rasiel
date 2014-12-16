@@ -6,12 +6,6 @@ html
     = javascript_include_tag "application"
     = csrf_meta_tags
   body
-    = render 'shared/alert' if flash[:alert].present?
-    = render 'shared/player'
     = render 'shared/menu'
-    - if @user.present?
-      = link_to 'Выйти', logout_path, method: :delete
-    - else
-      = link_to 'Войти через ВКонтакте', @vk_url
     #contant
       = yield

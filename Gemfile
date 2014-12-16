@@ -16,11 +16,11 @@ gem 'rails_config', '~> 0.3.3'
 gem 'jplayer-rails'
 gem 'vkontakte_api', '~> 1.4'
 gem 'tab_menu'
+gem 'devise'
 
 group :development do
   gem 'spring'
-  gem 'debugger'
-  gem 'pry-debugger'
+  gem 'pry'
 end
 
 group :production do

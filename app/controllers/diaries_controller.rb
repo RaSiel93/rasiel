@@ -51,11 +51,12 @@ class DiariesController < ApplicationController
   end
 
   private
-    def set_diary
-      @diary = Diary.find(params[:id])
-    end
 
-    def diary_params
-      params.require(:diary).permit(:title)
-    end
+  def set_diary
+    @diary = Diary.find(params[:id])
+  end
+
+  def diary_params
+    params.require(:diary).permit(:title)
+  end
 end

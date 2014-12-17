@@ -47,8 +47,7 @@ class NotesController < ApplicationController
   def destroy
     @note.destroy
     respond_to do |format|
-      format.html { redirect_to @diary }
-      format.json { head :no_content }
+      format.html { redirect_to action: :index }
     end
   end
 

@@ -3,7 +3,8 @@ class NotesController < ApplicationController
   before_action :set_diary
 
   def index
-    @notes = Note.all
+    @notes = Note.where(diary: @diary, published: true).order(:date)
+    @notes = Note.where(diary: @diary).order(:date) if params.has_key? 'all'
   end
 
   def show

@@ -1,5 +1,5 @@
 br
-= link_to note.title, diary_note_path(@diary, note)
+= link_to note.title || note.date, diary_note_path(@diary, note)
 br
 == note.text.truncate(320)
 br

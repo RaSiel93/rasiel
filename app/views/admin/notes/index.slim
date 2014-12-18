@@ -1,0 +1,10 @@
+h3 = @diary.title
+= render @notes
+br
+hr
+br
+= link_to 'Добавить', new_admin_diary_note_path(@diary)
+| |
+= link_to 'Редактировать', edit_admin_diary_path(@diary)
+| |
+= link_to 'Назад', admin_diaries_path

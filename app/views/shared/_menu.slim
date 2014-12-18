@@ -1,12 +1,14 @@
-div#menu
+#menu
   = tab_menu do |t|
     = t.tab 'Главная', root_path
     = t.tab 'Блог', '#'
     = t.tab 'Дневник', diaries_path
     = t.tab 'Фотоальбом', '#'
     = t.tab 'Обо мне', '#'
+    = t.tab 'Добавить день', new_myday_path
+    = t.tab 'Админка', admin_diaries_path if can? :update, Diary
     .right
-      - if @user.present?
-        = t.tab 'Выйти', logout_path, nil, method: :delete
+      - if current_user.present?
+        = t.tab 'Выйти', destroy_user_session_path, nil, method: :delete
       - else
         = t.tab 'Войти', user_session_path

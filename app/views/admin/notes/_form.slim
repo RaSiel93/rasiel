@@ -1,4 +1,4 @@
-= form_for([@diary, @note]) do |f|
+= form_for [:admin, @diary, @note] do |f|
   - if @note.errors.any?
     #error_explanation
       h2

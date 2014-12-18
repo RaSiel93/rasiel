@@ -18,6 +18,8 @@ gem 'jplayer-rails'
 gem 'vkontakte_api', '~> 1.4'
 gem 'tab_menu'
 gem 'devise'
+gem 'rolify'
+gem 'cancancan', '~> 1.9'
 
 group :development do
   gem 'spring'

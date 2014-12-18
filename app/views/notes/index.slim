@@ -1,11 +1,6 @@
-p#notice = notice
 h3 = @diary.title
 = render @notes
 br
 hr
 br
-= link_to 'New Note', new_diary_note_path(@diary)
-| |
-= link_to 'Edit', edit_diary_path(@diary)
-| |
 = link_to 'Back', diaries_path

@@ -7,9 +7,13 @@ Rails.application.routes.draw do
     resources :notes
   end
 
-  get 'callback' => 'sessions#callback'
-  delete 'logout' => 'sessions#destroy'
+  namespace :admin do
+    resources :diaries do
+      resources :notes
+    end
+  end
 
+  resources :myday, only: [:new, :create]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,0 +1,10 @@
+#menu
+  = tab_menu do |t|
+    = t.tab 'Главная', root_path
+    = t.tab 'Блог', '#'
+    = t.tab 'Дневник', admin_diaries_path
+    = t.tab 'Фотоальбом', '#'
+    = t.tab 'Обо мне', '#'
+    = t.tab 'Добавить день', new_myday_path
+    .right
+      = t.tab 'Выйти', destroy_user_session_path, nil, method: :delete

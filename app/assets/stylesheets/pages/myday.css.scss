@@ -1,0 +1,31 @@
+.logo {
+  width: 100%;
+  margin: 20px auto;
+  text-align: center;
+  h1 {
+    font-size: 60px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -256px;
+  }
+  p {
+    font-size: 128px;
+    padding-left: 128px;
+    margin-top: -8px;
+    margin-bottom: 0;
+  }
+}
+
+.new_note, .edit_note {
+  text-align: center;
+  textarea {
+    height: 280px;
+    width: 80%;
+    font-size: 30px;
+  }
+  input {
+    width: 30%;
+    font-size: 30px;
+    padding: 10px;
+  }
+}

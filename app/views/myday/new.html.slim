@@ -1,0 +1,8 @@
+.logo
+  h1 Welcome to
+  p MyDay
+= form_for @note, url: myday_index_path do |f|
+  .field
+    = f.text_area :text
+  .actions
+    = f.submit 'Добавить запись'

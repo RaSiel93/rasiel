@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   before_action :set_diary
 
   def index
-    @notes = Note.where(diary: @diary).order(:date)
+    @notes = Note.where(diary: @diary, published: true).order(:date)
   end
 
   def show

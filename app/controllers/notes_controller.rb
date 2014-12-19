@@ -7,6 +7,7 @@ class NotesController < ApplicationController
 
   def show
     @note = Note.find(params[:id])
+    redirect_to root_path if @note.published != true
   end
 
   private

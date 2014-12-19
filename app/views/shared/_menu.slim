@@ -1,14 +1,14 @@
-#menu
-  = tab_menu do |t|
-    = t.tab 'Главная', root_path
-    = t.tab 'Блог', '#'
-    = t.tab 'Дневник', diaries_path
-    = t.tab 'Фотоальбом', '#'
-    = t.tab 'Обо мне', '#'
-    = t.tab 'Добавить день', new_myday_path
-    = t.tab 'Админка', admin_diaries_path if can? :update, Diary
-    .right
-      - if current_user.present?
-        = t.tab 'Выйти', destroy_user_session_path, nil, method: :delete
-      - else
-        = t.tab 'Войти', user_session_path
+.navbar.navbar-default
+  .navbar-collapse.collapse.navbar-responsive-collapse
+    = tab_menu do |t|
+      .nav.navbar-nav
+        = t.tab 'Главная', root_path
+        = t.tab 'Дневник', diaries_path
+        = t.tab 'О сайте', about_path
+        = t.tab 'Добавить день', new_myday_path
+        = t.tab 'Админка', admin_diaries_path if can? :update, Diary
+      .nav.navbar-nav.navbar-right
+        - if current_user.present?
+          = t.tab 'Выйти', destroy_user_session_path, nil, method: :delete
+        - else
+          = t.tab 'Войти', user_session_path

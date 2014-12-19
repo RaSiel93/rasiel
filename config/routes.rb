@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'home#index'
+  get 'about' => 'about#index'
 
   resources :diaries do
     resources :notes

@@ -1,5 +1,4 @@
-br
-= link_to note.title || note.date, diary_note_path(@diary, note)
-br
-== note.text.try :truncate, 320
-br
+.note
+  = link_to note.title || note.date, diary_note_path(@diary, note)
+  br
+  == note.text.try :truncate, 160

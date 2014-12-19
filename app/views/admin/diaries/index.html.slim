@@ -6,6 +6,6 @@ table
   tbody
     - @diaries.each do |diary|
       tr
-        td = link_to diary.title, admin_diary_notes_path(diary)
+        td = link_to "#{diary.title} (#{diary.notes.count})", admin_diary_notes_path(diary)
 br
   = link_to 'Добавить дневник', new_admin_diary_path

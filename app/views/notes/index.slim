@@ -1,6 +1,5 @@
 h3 = @diary.title
-= render @notes
-br
-hr
-br
-= link_to 'Back', diaries_path
+.notes
+  = render @notes
+.actions
+  = link_to 'Назад', diaries_path

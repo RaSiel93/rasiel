@@ -3,8 +3,7 @@ class Admin::NotesController < Admin::ApplicationController
   before_action :set_diary
 
   def index
-    @notes = Note.where(diary: @diary, published: true).order(:date)
-    @notes = Note.where(diary: @diary).order(:date) if params.has_key? 'all'
+    @notes = Note.where(diary: @diary).order(:date)
   end
 
   def show
@@ -35,7 +34,7 @@ class Admin::NotesController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to [@diary, @note], notice: 'Note was successfully updated.' }
+        format.html { redirect_to [:admin, @diary, @note], notice: 'Note was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -61,6 +60,6 @@ class Admin::NotesController < Admin::ApplicationController
     end
 
     def note_params
-      params.require(:note).permit(:title, :text)
+      params.require(:note).permit(:title, :text, :published)
     end
 end

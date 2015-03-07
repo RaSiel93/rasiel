@@ -1,5 +1,0 @@
-class AddDateToNote < ActiveRecord::Migration
-  def change
-    add_column :notes, :date, :datetime
-  end
-end

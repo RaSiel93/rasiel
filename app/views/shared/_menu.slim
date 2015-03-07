@@ -11,4 +11,4 @@
         - if current_user.present?
           = t.tab 'Выйти', destroy_user_session_path, nil, method: :delete
         - else
-          = t.tab 'Войти', user_session_path
+          = t.tab 'Войти', new_user_session_path
